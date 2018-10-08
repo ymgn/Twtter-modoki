@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html" />
+    <title>Getting Started: Saving Web Content</title>
+</head>
+<body>
+    <h1> Twitterもどき！</h1>
+    <li th:each="tweet, status : ${tweets}">
+        [[${tweet.message}]]
+    </li>
+    <!--<pre th:text="${message}">message</pre>-->
+</body>
+</html>
