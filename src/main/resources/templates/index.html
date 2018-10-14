@@ -6,9 +6,17 @@
 </head>
 <body>
     <h1> Twitterもどき！</h1>
-    <li th:each="tweet, status : ${tweets}">
-        [[${tweet.message}]]
-    </li>
-    <!--<pre th:text="${message}">message</pre>-->
+    <div>
+        <h2>Tweet</h2>
+        <form th:action="@{/tweet}" method="post">
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <button type="submit">Tweet</button>
+        </form>
+    </div>
+    <span th:if="${#lists.isEmpty(tweets)}">ツイートはありません</span>
+    <div th:each="tweet, status : ${tweets}">
+        [[${tweet.username}]]
+        <p>[[${tweet.message}]]</p>
+    </div>
 </body>
 </html>
