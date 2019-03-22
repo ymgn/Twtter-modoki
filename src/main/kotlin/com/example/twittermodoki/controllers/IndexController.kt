@@ -36,6 +36,7 @@ class IndexController(
         return "index"
     }
 
+    // ツイートの投稿
     @PostMapping("/tweet",
     produces = arrayOf(MediaType.APPLICATION_FORM_URLENCODED_VALUE))
     fun registTweet(model: Model, @RequestParam requestParam: Map<String,String>): String {
@@ -47,7 +48,12 @@ class IndexController(
             return "redirect:/"
         }
 
-        val tweet = Tweet(tweetMessage,"ymgn")
+        val loginUser = session.getAttribute("loginUser") as User?
+                ?:
+                // エラーのメッセージだしたい
+                return "redirect:/"
+
+        val tweet = Tweet(tweetMessage, loginUser)
         registrationTweet.registrationTweet(tweet)
 
         return "redirect:/"

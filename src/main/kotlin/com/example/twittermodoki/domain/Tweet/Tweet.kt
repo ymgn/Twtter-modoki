@@ -1,3 +1,5 @@
 package com.example.twittermodoki.domain.Tweet
 
-class Tweet(var message: String, var username: String)
+import com.example.twittermodoki.domain.User.User
+
+class Tweet(var message: String, var user: User)

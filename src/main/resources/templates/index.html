@@ -15,7 +15,7 @@
     </div>
     <span th:if="${#lists.isEmpty(tweets)}">ツイートはありません</span>
     <div th:each="tweet, status : ${tweets}">
-        [[${tweet.username}]]
+        [[${tweet.user.id}]]
         <p>[[${tweet.message}]]</p>
     </div>
 </body>
