@@ -1,6 +1,6 @@
 package com.example.twittermodoki.domain.Tweet
 
-interface TweetRepositoryInterface {
+interface TweetRepository {
 
     /**
      * Tweetを保存する
