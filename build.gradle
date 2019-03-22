@@ -48,7 +48,13 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 
 	// thymeleaf => テンプレートエンジンのthymeleafを使う
-	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	// spring-boot-devtools => オートリロードを有効にする
-	compile('org.springframework.boot:spring-boot-devtools')
+	implementation('org.springframework.boot:spring-boot-devtools')
+	// mysql
+	implementation('mysql:mysql-connector-java:5.1.6')
+
+//	Spring-Securityを使う場合
+//	implementation('org.springframework.boot:spring-boot-starter-security')
+//	testImplementation('org.springframework.security:spring-security-test')
 }
