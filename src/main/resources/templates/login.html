@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html" />
+    <title>Getting Started: Saving Web Content</title>
+</head>
+<body>
+    <h1> Twitterもどき！ログインページ</h1>
+    <div>
+        <h2>Tweet</h2>
+        <form th:action="@{/login}" method="post">
+            <input type="text" placeholder="ユーザーID" name="userId" size="40" autocomplete="OFF">
+            <input type="password" placeholder="パスワード" name="userPassWord" size="100" autocomplete="OFF">
+            <button type="submit">ログイン</button>
+        </form>
+    </div>
+    <p><a href="/signup">新規登録はこちら</a></p>
+</body>
+</html>
