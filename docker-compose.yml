@@ -17,4 +17,14 @@ services:
     container_name: tw-modoki-db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: twitter_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+      TZ: 'Asia/Tokyo'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./infra/docker/mysql/db/data:/var/lib/mysql
+      - ./infra/docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./infra/docker/mysql/initdb.d:/docker-entrypoint-initdb.d
